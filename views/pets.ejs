@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <% include ./partials/head %>
+ </head>
+ <body>
+   <header>
+     <% include ./partials/header %>
+   </header>
+   <h1 class='center'>My Pets</h1>
+   <hr />
+   <div class='row'>
+     <div class='col s12 m4'>
+       <h3>Add Pet</h3>
+       <form action='/pets' method='post'>
+         <input type='text' name='name' placeholder='Name' />
+         <button class='btn btn-waves' type='submit'>Add</button>
+       </form>
+     </div>
+     <table class='table col m8 s12'>
+       <thead>
+         <th>Name</th>
+         <th>x</th>
+       </thead>
+       <tbody>
+         <% pets.forEach( function(pet) { %>
+           <tr>
+             <td><%= pet.name %></td>
+         <% }); %>
+       </tbody>
+     </table>
+   </body>
+</html>
